@@ -83,6 +83,21 @@ final class ISO4217
         return $this->currencies;
     }
 
+     /**
+     * @api
+     *
+     * @uses ::$currencies
+     */
+    public function getAllAlpha3(): array
+    {
+        $allAlpha3 = array();
+        foreach ($this->currencies as $currency) {
+            $newAlpha3 = $currency['alpha3'];
+            array_push($allAlpha3, $newAlpha3);
+        }
+        return $allAlpha3;
+    }
+    
     /**
      * @internal
      *
